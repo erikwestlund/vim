@@ -1,0 +1,26 @@
+noremap <Space> <Nop>
+map <Space> <Leader>
+
+:set relativenumber
+:set number
+
+# In visual mode, move highlighted text up and down.
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+# Concatenates line below with current line and keeps cursor in same place
+nnoremap J mzJ`z
+
+# Scrolls down/up but keeps the cursor centered.
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+# Lets cursor stay in middle of screen when searching for terms.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+# keeps ctrl+c and escape behavior identical
+inoremap <C-c> <Esc>
+
+# avoid default Q behavior.
+nnoremap Q <nop>
